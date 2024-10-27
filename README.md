@@ -1,4 +1,5 @@
 
+![d](https://github.com/user-attachments/assets/2cf50cdd-a719-4602-9a0e-77365b479bf1)
 
 ✔️ Auto tap
 
@@ -37,7 +38,7 @@ query_id=xxx or user=xxxx
 
 ```js
 {
-    "maxUpgradePrice": 500000
+    "maxUpgradePrice": 550000
 }
 ```
 
