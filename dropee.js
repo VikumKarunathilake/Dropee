@@ -4,24 +4,15 @@ const axios = require('axios');
 const colors = require('colors');
 const readline = require('readline');
 const printLogo = require('./src/logo');
+const headers = require("./src/header");
+const log = require('./src/logger');
+
 
 class DropeeAPIClient {
     constructor() {
         this.baseUrl = 'https://dropee.clicker-game-api.tropee.com/api/game';
-        this.headers = {
-            "Accept": "*/*",
-            "Accept-Encoding": "gzip, deflate, br",
-            "Accept-Language": "vi-VN,vi;q=0.9,fr-FR;q=0.8,fr;q=0.7,en-US;q=0.6,en;q=0.5",
-            "Content-Type": "application/json",
-            "Origin": "https://webapp.game.dropee.xyz",
-            "Referer": "https://webapp.game.dropee.xyz/",
-            "Sec-Ch-Ua": '"Not/A)Brand";v="99", "Google Chrome";v="115", "Chromium";v="115"',
-            "Sec-Ch-Ua-Mobile": "?1",
-            "Sec-Ch-Ua-Platform": '"Android"',
-            "User-Agent": "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Mobile Safari/537.36",
-            "X-Preview-Season": "betav2"
-        };
-
+        this.headers = headers;
+        this.log = log;
         this.tokenFile = path.join(__dirname, 'token.json');
         this.loadTokens();
 
@@ -112,26 +103,6 @@ class DropeeAPIClient {
         }
         
         throw new Error(`No valid token found: ${loginResult.error}`);
-    }
-
-    log(msg, type = 'info') {
-        const timestamp = new Date().toLocaleTimeString();
-        switch(type) {
-            case 'success':
-                console.log(`[${timestamp}] [*] ${msg}`.green);
-                break;
-            case 'custom':
-                console.log(`[${timestamp}] [*] ${msg}`.magenta);
-                break;        
-            case 'error':
-                console.log(`[${timestamp}] [!] ${msg}`.red);
-                break;
-            case 'warning':
-                console.log(`[${timestamp}] [*] ${msg}`.yellow);
-                break;
-            default:
-                console.log(`[${timestamp}] [*] ${msg}`.blue);
-        }
     }
 
     async countdown(seconds) {
