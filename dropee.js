@@ -338,7 +338,7 @@ class DropeeAPIClient {
             ...this.headers,
             "Authorization": `Bearer ${token}`
         };
-        const payload = { version: 2 };
+        const payload = { version: 3 };
 
         try {
             const response = await axios.post(url, payload, { headers });
