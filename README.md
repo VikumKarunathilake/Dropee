@@ -9,6 +9,8 @@
 
 ✔️ Auto upgrade card
 
+✔️ Multi-threading support
+
 
 # 🛠️ Instructions:
 
@@ -51,3 +53,7 @@ noproxy:
 proxy:
 
 `node dropee-proxy.js`
+
+multi-threading + proxy:
+
+`node dropee-thread.js`
