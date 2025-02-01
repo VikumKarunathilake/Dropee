@@ -157,7 +157,7 @@ class DropeeAPIClient {
         const url = `${this.baseUrl}/telegram/me`;
         const payload = {
             initData: initData,
-            referrerCode: "6-lWnwV7vtL",
+            referrerCode: "93KvKm9wl8v",
             utmSource: null,
             impersonationToken: null
         };
